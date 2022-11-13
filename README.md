@@ -6,4 +6,5 @@
    npx create-react-app ./ --template typescript
  - 리액트 라우터 설치   
    npm i react-router-dom @types/react-router-dom
- - 
+ - 리액트 이모션 설치   
+   npm i @emotion/react @emotion/styled
