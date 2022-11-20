@@ -9,4 +9,8 @@
  - 리액트 이모션 설치   
    npm i @emotion/react @emotion/styled
  - 리액트 아이콘 설치   
-   npm i react-icons
+   npm i react-icons   
+ - 리액트 axios 설치   
+      npm i axios
+ - 리액트 슬릭슬라이더 설치   
+   npm i @types/react-slick
