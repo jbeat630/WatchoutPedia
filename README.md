@@ -8,3 +8,5 @@
    npm i react-router-dom @types/react-router-dom
  - 리액트 이모션 설치   
    npm i @emotion/react @emotion/styled
+ - 리액트 아이콘 설치   
+   npm i react-icons
