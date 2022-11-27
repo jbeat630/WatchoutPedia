@@ -29,7 +29,7 @@ const Menu = styled.li`
   align-items: center;
   flex-shrink: 0;
   height: 62px;
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     margin-left: 24px;
   };
 `;
