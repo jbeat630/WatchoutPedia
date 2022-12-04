@@ -14,5 +14,6 @@
       npm i axios
  - 리액트 슬릭슬라이더 설치   
    npm i @types/react-slick  
+   npm i slick-carousel
  - 리액트 쿼리 설치   
    npm i react-query
