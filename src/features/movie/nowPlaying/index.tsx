@@ -1,31 +1,36 @@
-import React from "react";
-import styled from "@emotion/styled";
-import useNowPlayingMovie from "./useNowPlayingMovie";
-import Card from "../../../Components/Card";
-import Slider from "react-slick";
+import React from 'react';
+import styled from '@emotion/styled';
 
+import Slider from '../../../Components/Slider';
+import useNowPlayingMovie from './useNowPlayingMovie';
+import Card from '../../../Components/Card';
 
+const Base = styled.div`
+  margin-bottom: 42px;
+`;
 
-const Base = styled.div``;
+const Title = styled.h4`
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 12px 0 14px;
+`;
 
-const Title = styled.h4``;
+const UpcomingMovieSection: React.FC = () => {
+    const { data: nowPlayingMovieResponse, isLoading } = useNowPlayingMovie();
 
-const NowPlayingSection: React.FC = () => {
-    const { data, isLoading} = useNowPlayingMovie();
+    const getYear = (release_date: string) => release_date.split('-')[0] || '';
 
-    const getYear = (date:string) => date.split('-')[0];
-
-    // @ts-ignore
     return (
         <Base>
-            <Title>최근 개봉작</Title>
+            <Title>현재 상영중</Title>
             {
-                isLoading || !data ? (
+                isLoading ? (
                     <div>Loading...</div>
                 ) : (
                     <Slider>
                         {
-                            data.data.results.map(movie =>(
+                            nowPlayingMovieResponse?.data?.results.map(movie => (
                                 <Card
                                     key={movie.id}
                                     linkUrl={`/movie/${movie.id}`}
@@ -43,4 +48,4 @@ const NowPlayingSection: React.FC = () => {
     )
 }
 
-export default NowPlayingSection;
+export default UpcomingMovieSection;
